@@ -170,19 +170,19 @@ header {
 }
 
 .carousel-img-eva {
-  background-image: url("../img/ptaki_banner_loop_taller1.gif");
+  background-image: url("ptaki_banner_loop_taller1.gif");
 }
 
 .carousel-img-gundam {
-  background-image: url("../img/ptaki_banner_loop_taller1.gif");
+  background-image: url("ptaki_banner_loop_taller1.gif");
 }
 
-.carousel-img-gurren {
+/* .carousel-img-gurren {
   background-image: url("../img/vektory.gif");
-}
+} */
 
 .carousel-img-galileo {
-  background-image: url("../img/intro\ BANER\ SZEROKI.gif");
+  background-image: url("intro_banner.gif");
 }
 
 /* Main */
