@@ -56,7 +56,14 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const video = document.getElementById("remoteVideo");
+const videoLoader = document.getElementById("videoLoader");
 
-video.addEventListener("play", () => {
+// Remove spinner only when video actually starts playing
+video.addEventListener("playing", () => {
+  videoLoader.style.display = "none";
+  video.style.transition = "filter 0.5s ease";
   video.style.filter = "none";
 });
+
+
+https://github.com/PaulinaOgloza/portfolio_2025/releases/download/v3.0/reel_2025_720.mp4?raw=1
