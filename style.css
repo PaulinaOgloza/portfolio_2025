@@ -1,3 +1,4 @@
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,21 +9,24 @@ html {
   background: linear-gradient(135deg, #1c163a 0%, #0d0a1f 50%, #2b1f4d 100%);
   font-size: 62.5%;
   scroll-behavior: smooth;
+  position: relative; /* important for body::before */
+  min-height: 100%;
 }
 
 body {
-  /* font-family: "Poppins", sans-serif; */
+  font-family: "Poppins", sans-serif;
   font-size: 1.8rem;
   margin: 0;
   min-height: 100vh;
   color: #ffffff;
-  background: transparent;
+  background: inherit; /* use the html background */
+  position: relative; /* ensure pseudo-element works */
   overflow-x: hidden;
 }
 
 body::before {
   content: "";
-  position: absolute; /* not fixed */
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
