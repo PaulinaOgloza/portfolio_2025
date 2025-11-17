@@ -460,9 +460,10 @@ header {
 
 /* REEL */
 
+/* ===== Reel Section ===== */
 .reel-section {
   position: relative;
-  padding: 8rem; /* adds space for top and bottom */
+  padding: 8rem; /* space top and bottom */
   background: radial-gradient(
     circle at top,
     rgba(17, 9, 22, 0.7),
@@ -472,11 +473,50 @@ header {
   backdrop-filter: blur(10px);
 }
 
+/* ===== Video Styling ===== */
 .reel-section video {
-  /* width: 240px; */
-  border-radius: 100px;
+  width: 100%;
+  border-radius: 20px;
+  filter: blur(12px) brightness(0.9);
+  transition: filter 0.5s ease;
+  cursor: pointer;
+  display: block;
+  object-fit: cover;
 }
 
+.reel-section.video-active {
+  background: rgba(15, 20, 40, 0.85); /* slightly darker overlay */
+  transition: background 0.5s ease;
+}
+
+/* ===== Overlay for play button ===== */
+.video-overlay {
+  position: absolute;
+  inset: 0; /* full coverage */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3); /* frosted semi-transparent */
+  cursor: pointer;
+  z-index: 2;
+  transition: background 0.3s;
+}
+
+.video-overlay:hover {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+/* ===== Play Icon ===== */
+.video-overlay::after {
+  content: "\f04b"; /* FontAwesome play */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 4rem;
+  color: white;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* ===== Section Title ===== */
 .demo-reel-title {
   position: relative;
   font-size: 3rem;
@@ -486,26 +526,14 @@ header {
   text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
-.reel-thumbnail {
-  filter: blur(8px) brightness(0.7);
-  position: relative;
-}
-
-.reel-thumbnail::after {
-  content: "\f04b"; /* FontAwesome play icon */
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
+/* ===== Loading Spinner ===== */
+.loading-spinner {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 4rem;
-  color: white;
-}
-
-#remoteVideo {
-  filter: blur(50px) brightness(0.9);
-  transition: filter 0.5s ease;
+  inset: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
 }
 
 /* CONTACT  */
