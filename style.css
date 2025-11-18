@@ -22,8 +22,8 @@ html {
 
 @font-face {
   font-family: "Poppins";
-  src: url("/fonts/Poppins-Bold.woff2") format("woff2"),
-    url("/fonts/Poppins-Bold.woff") format("woff");
+  src: url("Poppins-Bold.woff2") format("woff2"),
+    url("Poppins-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
 }
