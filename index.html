@@ -82,10 +82,9 @@
     </div>
   </header>
 
-  <main>
    <main>
   <!-- HOME-BOXES -->
-  <section class="home-boxes py-5">
+  <section class="home-boxes scroll-animate py-5">
     <div class="container text-center">
       <div class="row g-4 justify-content-center">
         <div class="col-lg-5 col-md-6 col-12">
@@ -99,7 +98,7 @@
             <p class="card-text"> Optimized workflow ensures timely and high-quality output for all projects. </p>
           </div>
         </div>
-        <div class="col-lg-5 col-md-6 col-12">
+        <div class="col-lg-5 col-md-6 col-sm-6 col-12">
           <div class="home-card p-4 ">
             <div class="icon-wrap mb-4">
               <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
@@ -140,11 +139,12 @@
   <p class="line py-1 text-center"></p>
   <section>
     <section class="reel-section darkblue-background py-5 pt-0">
+       <div class="scroll-inner ">
       <p id="watch-reel" class="section-title demo-reel-title display-2 text-center pt-5"> 2025 DEMO REEL </p>
       <div class="row justify-content-center rounded-4 shadow-sm">
         <div class="col-md-9">
           <div class="darkblue-background">
-            <div class="card-body pt-3 reel-wrapper">
+            <div class="card-body pt-3 reel-wrapper scroll-animate">
               <!-- Video Container -->
               <div id="videoOverlay" class="video-overlay">
                 <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
@@ -153,7 +153,7 @@
                 </svg>
               </div>
               <div class="ratio ratio-16x9 position-relative">
-                <video id="remoteVideo" controls muted playsinline preload="none" poster="thumbnail_blue.jpg">
+                <video id="remoteVideo" autoplay loop controls muted playsinline preload="none" poster="thumbnail_blue.jpg">
                   <source id="videoSource" src="reel_2025_720.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
@@ -171,21 +171,19 @@
               <!-- Mute Button -->
               <div class="darkblue-background cardcard mx-auto">
                 <div class="text-center my-3">
-                  <button id="muteBtn" class="mute-btn">
-                    <i class="fa-solid fa-volume-xmark"></i> Unmute
-                  </button>
+                  
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </div></div>
     </section>
   </section>
 
   <!-- ABOUT ME -->
   <p id="about-me" class="section-line"></p>
-  <section class="about-me-box py-5 ">
+  <section class="about-me-box scroll-animate py-5 ">
     <div class="container">
       <p class="section-title display-2 text-center pt-5">ABOUT ME</p>
       <div class="row justify-content-center">
@@ -193,15 +191,15 @@
           <div class="about-me card">
             <img src="ja3.webp" class="card-img-top" alt="Galileo">
             <div class="longer-text card-body">
-              <p class="longer-text">
+              <div class="longer-text">
                 <p> Hi, I'm Paulina, a cross-disciplinary designer with love for technology.</p>
-                <p> I create projects that balance usability, practicality, and memorable design. Over five years at Ocean Technologies, as well as through freelance collaborations, I led and completed numerous projects, working closely with Design and IT teams. </p>
-              </p>
+                  <p> I create projects that balance usability, practicality, and memorable design. Over five years at Ocean Technologies, as well as through freelance collaborations, I led and completed numerous projects, working closely with Design and IT teams. </p>
+                  <p> I supplemented my Digital Design major with Front-End postgraduate studies and am currently pursuing a Python/Django/AI bootcamp to deepen my understanding of the applications I design and enhance my cross-field collaborations. </p>
               <!-- Hidden extra text -->
               <div class="collapse-wrapper">
                 <div class="longer-text collapse" id="moreText">
-                  <p> I supplemented my Digital Design major with Front-End postgraduate studies and am currently pursuing a Python/Django/AI bootcamp to deepen my understanding of the applications I design and enhance my cross-field collaborations. </p>
-                  <p class=""> I also enjoy mentoring junior designers, experimenting with 3D/2D motion graphics, and exploring interactive web experiences. </p>
+                  <p> I also enjoy mentoring junior designers, experimenting with 3D/2D motion graphics, and exploring interactive web experiences. </p>
+              </div>
                   <p> My tools of choice are; Adobe Suite, Blender, Cinema4D and Figma.</p>
                 </div>
               </div>
@@ -218,7 +216,7 @@
   <!-- CONTACT -->
   <section id="contact" class="contact-section gradient-bg py-5">
     <div class="container text-center">
-      <div class="contact-card glass-card p-5 mx-auto">
+      <div class="contact-card glass-card p-5 mx-auto scroll-animate">
         <h2 class="contact-title display-2">Get in Touch</h2>
         <p class="contact-text-small mb-4"> Questions, collaborations, or opportunities—reach out anytime! </p>
         <a href="mailto:oglozap@gmail.com" class="btn send-email-btn btn-lg">
@@ -231,8 +229,6 @@
   </section>
 </main>
 
-
-  </main>
 
   <!-- FOOTER -->
   <footer class="darkblue-background text-light">
