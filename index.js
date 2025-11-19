@@ -32,26 +32,25 @@ document.addEventListener("DOMContentLoaded", () => {
   const videoLoader = document.getElementById("videoLoader");
   const qualitySelect = document.getElementById("videoQuality");
   const videoOverlay = document.getElementById("videoOverlay");
-  const muteBtn = document.getElementById("muteBtn");
+  // NOTE: Do NOT handle muteBtn here because the inline script is already doing it
 
   const sources = {
     720: "reel_2025_720.mp4",
     1080: "reel_2025_1080.mp4",
   };
 
-  // Show loader
+  // ===== Loader Functions =====
   function showLoader() {
     video.style.filter = "blur(12px)";
     videoLoader.style.display = "block";
   }
 
-  // Hide loader
   function hideLoader() {
     video.style.filter = "none";
     videoLoader.style.display = "none";
   }
 
-  // Load video quality without autoplay
+  // ===== Load Video Quality =====
   function loadVideoQuality(resolution) {
     const currentTime = video.currentTime || 0;
     const wasPaused = video.paused;
@@ -75,12 +74,12 @@ document.addEventListener("DOMContentLoaded", () => {
     loadVideoQuality(qualitySelect.value);
   });
 
-  // Overlay click to play
+  // ===== Overlay Play =====
   videoOverlay.addEventListener("click", () => {
     video.play();
   });
 
-  // Play/pause events
+  // ===== Play/Pause Events =====
   video.addEventListener("play", () => {
     hideLoader();
     videoOverlay.style.display = "none";
@@ -91,16 +90,28 @@ document.addEventListener("DOMContentLoaded", () => {
     videoOverlay.style.display = "flex";
   });
 
-  // Mute/unmute button
-  muteBtn.addEventListener("click", () => {
-    video.muted = !video.muted;
-    muteBtn.innerHTML = video.muted
-      ? '<i class="fa-solid fa-volume-xmark"></i> Unmute'
-      : '<i class="fa-solid fa-volume-high"></i> Mute';
-  });
-
-  // Set default quality without autoplay
-  videoSource.src = sources[720];
+  // ===== Initialize Video =====
+  video.muted = true; // start muted
+  videoSource.src = sources[720]; // default quality
   video.load();
   hideLoader();
+});
+
+// Card movement on mobile
+
+document.addEventListener("DOMContentLoaded", () => {
+  const scrollElements = document.querySelectorAll(".scroll-animate");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("scrolled-into-view");
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+
+  scrollElements.forEach((el) => observer.observe(el));
 });
