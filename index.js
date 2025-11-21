@@ -32,14 +32,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const videoLoader = document.getElementById("videoLoader");
   const qualitySelect = document.getElementById("videoQuality");
   const videoOverlay = document.getElementById("videoOverlay");
-  // NOTE: Do NOT handle muteBtn here because the inline script is already doing it
 
   const sources = {
     720: "REEL2025_720.mp4",
     1080: "/Reel2025_HD.mp4",
   };
 
-  // ===== Loader Functions =====
   function showLoader() {
     video.style.filter = "blur(12px)";
     videoLoader.style.display = "block";
@@ -50,7 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
     videoLoader.style.display = "none";
   }
 
-  // ===== Load Video Quality =====
   function loadVideoQuality(resolution) {
     const currentTime = video.currentTime || 0;
     const wasPaused = video.paused;
@@ -74,12 +71,10 @@ document.addEventListener("DOMContentLoaded", () => {
     loadVideoQuality(qualitySelect.value);
   });
 
-  // ===== Overlay Play =====
   videoOverlay.addEventListener("click", () => {
     video.play();
   });
 
-  // ===== Play/Pause Events =====
   video.addEventListener("play", () => {
     hideLoader();
     videoOverlay.style.display = "none";
@@ -90,16 +85,13 @@ document.addEventListener("DOMContentLoaded", () => {
     videoOverlay.style.display = "flex";
   });
 
-  // ===== Initialize Video =====
-  video.muted = true; // start muted
-  videoSource.src = sources[720]; // default quality
+  // Initialize video
+  video.muted = true;
+  videoSource.src = sources[720];
   video.load();
   hideLoader();
-});
 
-// Card movement on mobile
-
-document.addEventListener("DOMContentLoaded", () => {
+  // ===== Scroll animations =====
   const scrollElements = document.querySelectorAll(".scroll-animate");
 
   const observer = new IntersectionObserver(
@@ -110,13 +102,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     },
-    { threshold: 0.3 }
+    { threshold: 0.1 } // smaller threshold for mobile
   );
 
   scrollElements.forEach((el) => observer.observe(el));
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const scrollElements = document.querySelectorAll(".scroll-animate");
-  scrollElements.forEach((el) => el.classList.add("scrolled-into-view"));
 });
