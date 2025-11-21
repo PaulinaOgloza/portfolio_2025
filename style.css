@@ -442,6 +442,43 @@ header {
   }
 }
 
+/* About Me scroll animation for mobile */
+@media (max-width: 800px) {
+  .about-me.card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .about-me.card.scrolled-into-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Image size and float effect */
+  .about-me img.about-float {
+    width: 250px;
+    height: 250px;
+    margin: -125px auto 20px auto;
+    transition: transform 2s ease-in-out;
+  }
+
+  /* optional gentle floating animation */
+  .about-me.card.scrolled-into-view img.about-float {
+    animation: floatY 4s ease-in-out infinite;
+  }
+
+  @keyframes floatY {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-6px);
+    }
+  }
+}
+
 /* REEL */ /* ===== Reel Section ===== */
 .reel-section {
   position: relative;
