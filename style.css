@@ -1246,3 +1246,9 @@ footer {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
   }
 }
+
+@media (max-width: 800px) {
+  .about-me-box .section-title {
+    margin-bottom: 2rem !important;
+  }
+}
