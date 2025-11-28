@@ -26,7 +26,8 @@
         <ul class="navbar-nav text-center">
           <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="#watch-reel">Watch Reel</a></li>
-          <li class="nav-item"><a class="nav-link" href="#illustration-section">Illustration</a></li>
+<li class="nav-item"><a class="nav-link" href="#illustration-section">Illustration</a></li>
+
           <li class="nav-item"><a class="nav-link" href="#about-me">About Me</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
           <li class="nav-item">
@@ -214,22 +215,48 @@
 
     <div class="row illustration-row justify-content-center">
 
-      <div class="illustration-thumb-wrapper">
-        <img src="bunnies_thumb2.webp" data-full="bunnies_full.webp" class="illustration-thumb" alt="Illustration 1">
-      </div>
+  <div class="illustration-thumb-wrapper">
+    <picture>
+      <source srcset="bunnies_thumb_mobile.webp" media="(max-width: 800px)">
+      <img src="bunnies_thumb2.webp"
+           data-full="bunnies_full.webp"
+           class="illustration-thumb"
+           alt="Illustration 1">
+    </picture>
+  </div>
 
-      <div class="illustration-thumb-wrapper">
-        <img src="ludki_thumb.webp" data-full="ludki_full.webp" class="illustration-thumb" alt="Illustration 2">
-      </div>
+  <div class="illustration-thumb-wrapper">
+    <picture>
+      <source srcset="ludki_thumb_mobile.webp" media="(max-width: 800px)">
+      <img src="ludki_thumb.webp"
+           data-full="ludki_full.webp"
+           class="illustration-thumb"
+           alt="Illustration 2">
+    </picture>
+  </div>
 
-      <div class="illustration-thumb-wrapper">
-        <img src="cats_thumb.webp" data-full="cats_full.webp" class="illustration-thumb" alt="Illustration 3">
-      </div>
+  <div class="illustration-thumb-wrapper">
+    <picture>
+      <source srcset="cats_thumb_mobile.webp" media="(max-width: 800px)">
+      <img src="cats_thumb.webp"
+           data-full="cats_full.webp"
+           class="illustration-thumb"
+           alt="Illustration 3">
+    </picture>
+  </div>
 
-      <!-- <div class="illustration-thumb-wrapper">
-        <img src="ja3.webp" data-full="ja3_full.webp" class="illustration-thumb" alt="Illustration 4">
-      </div> -->
-    </div>
+  <div class="illustration-thumb-wrapper">
+    <picture>
+      <source srcset="mass_effect_thumb_mobile.webp" media="(max-width: 800px)">
+      <img src="mass_effect_thumb.webp"
+           data-full="mass_effect_full.webp"
+           class="illustration-thumb"
+           alt="Illustration 4">
+    </picture>
+  </div>
+
+</div>
+
   </div>
 
   <!-- Full Image Overlay -->
